@@ -11,7 +11,7 @@ MCP server for reading and writing files in an Obsidian vault. Supports two tran
 | `list_files(path="")` | List files in a directory (`.md`, `.txt`, `.json`) |
 | `list_folders(path="")` | List subfolders in a directory (ignoring `.git`, `venv`, `__pycache__`, `.idea`, `.venv`) |
 | `search_text(keytext, folder="")` | Recursive text search across files with context and sorting by number of occurrences |
-| `write_file(filepath, content, mode="w")` | Write/append to a file (`w` — overwrite, `a` — append) |
+| `write_file(filepath, content, mode="w")` | Write/append to a file (`w` - overwrite, `a` - append) |
 | `read_file(filepath, embed_images=False)` | Read a file. When `embed_images=True`, resolves Obsidian links `![[image.png]]` and returns images as `ImageContent` blocks (base64), with resizing and a size budget |
 
 ### Prompts
@@ -39,7 +39,7 @@ MCP server for reading and writing files in an Obsidian vault. Supports two tran
 
 ### Security
 
-- All paths are validated through `_resolve_safe` — escaping `OBSIDIAN_VAULT` is forbidden (`Path.is_relative_to`)
+- All paths are validated through `_resolve_safe` - escaping `OBSIDIAN_VAULT` is forbidden (`Path.is_relative_to`)
 - Ignored directories: `IGNORE_DIRS` = `.git`, `__pycache__`, `venv`, `.venv`, `.idea`
 - Size limit on files read/written: `MAX_FILE_CHARS` = **500 000** characters
 
